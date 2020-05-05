@@ -25,7 +25,7 @@ ini_set('display_errors','on');//   salgan errores.
             <ul class="navbar-nav">
                 <li class="nav-item active">
 
-                    <a class="nav-link" href="index.php"><strong>
+                    <a class="nav-link"><strong>
                             <h3>Log In</h3>
                         </strong>
                     </a>
@@ -59,6 +59,10 @@ ini_set('display_errors','on');//   salgan errores.
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="registraUsuario.php">Registrar usuario</a><!-- vamos a añadir-->
+
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="..">Volver al Inicio</a>
 
                 </li>
 

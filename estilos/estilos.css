@@ -1,14 +1,14 @@
 .container{
-    background-color: aqua;
+    background-color: green ;
     color: black;
     margin-top: 20px;
-    background-color: beige;
-   
 }
 .cabeceraTotal{
     width: 90%;
    height: 115px;
    margin: auto;
+   background-color: blue;
+   border: red 5px double;
 }
 #cabecera{
     margin: auto;
@@ -21,4 +21,23 @@
     width:190px;
     height:100px;
     border-radius:150px;
+}
+.cuerpo
+{
+    width: 90%;
+    margin: auto;
+    background-color: red;
+    margin-top: 20px;
+}
+.footer{
+    margin: auto;
+    margin-top: 20px;
+    background-color: red;
+    width: 100%;
+}
+#mapa{
+    margin: auto;
+    width: 10%;
+   
+   
 }

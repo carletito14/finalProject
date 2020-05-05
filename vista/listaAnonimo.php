@@ -27,12 +27,70 @@ ini_set('display_errors', 'on'); //   salgan errores.
             </nav>
         </div>
 
+        <div class="cuerpo">
+
+            cuerpo
+        </div>
+        <!-- Footer -->
+
+        <div class="footer">
+            <footer class="page-footer font-small blue pt-4">
+
+                <!-- Footer Links -->
+                <div class="container-fluid text-center text-md-left">
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-7 mt-md-1 mt-3">
+
+                            <!-- Content -->
+                            <h2>Info de app</h2>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#!">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Twitter</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                       
+                        
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+
+                            <!-- Links -->
+                            <h5 class="text-uppercase" id="mapa">Ubicación</h5>
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.7590375872555!2d-5.776169221618539!3d37.185901454436305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd127fa80bd7d143%3A0x9fa974b82c133ef6!2sInstituto%20de%20Educaci%C3%B3n%20Secundaria%20Ruiz%20Gij%C3%B3n!5e0!3m2!1ses!2ses!4v1588608719172!5m2!1ses!2ses"></iframe>
 
 
 
+                        </div>
+                    
+                        <!-- Grid row -->
+
+                    </div>
+                    <!-- Footer Links -->
+
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                        <a href=""> Manuel Gutiérrez Campos</a>
+                    </div>
+
+            </footer>
 
 
+        </div>
     </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
