@@ -8,9 +8,9 @@ include_once "../modelo/Persona.php";
     
 }*/
 $nombre = $_REQUEST['nombre']; //si este nombre no está en la bbdd, debe registrarse
-$contraseña = $_REQUEST['pass']; //si este nombre no está en la bbdd, debe registrarse
+$pass = $_REQUEST['pass']; //si este nombre no está en la bbdd, debe registrarse
 $nombreRegistrado = Persona::saberSiEstaNombre($nombre);
-$contraseñaRegistrada = Persona::saberSiEstaContrasenia($contraseña);
+$contraseñaRegistrada = Persona::saberSiEstaContrasenia($pass);
 
 
 if (($nombreRegistrado > 0) && ($contraseñaRegistrada > 0)) {
@@ -24,7 +24,7 @@ if (($nombreRegistrado > 0) && ($contraseñaRegistrada > 0)) {
     $_SESSION['pass'] = $pass;
     echo '<script type="text/javascript">
     alert("Bienvenido '.$nombre.'");
-    window.location.href="../controlador/controlaUsuario.php";
+    window.location.href="../controlador/index.php";
     </script>';
 } else {
     echo '<script type="text/javascript">
