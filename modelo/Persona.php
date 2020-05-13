@@ -3,7 +3,7 @@ include_once "../modelo/ConexionDB.php";
 //codigo, nombre, apellidos, contraseña, foto.
 class Persona
 {
-    private $codigo, $nombre, $apellidos, $pass, $foto, $administrador;
+    private $codigo, $nombre, $apellidos, $pass, $administrador;
 
     public function __construct($codigo, $nombre = "", $apellidos = "", $pass = "",$administrador = false) //se sobrecarga el método(opcional)
     {
@@ -137,8 +137,7 @@ class Persona
         $conexion = ConexionDB::conectar(); //conectamos
         //consulta
         $insertar = "UPDATE personas SET nombre='" . $this->getNombre() . "', apellidos = '" . $this->getApellidos() . "',
-         pass = '" . $this->getPass() . "', foto = '" . $this->getFoto() . "', administrador = '" . $this->getAdministrador()
-            . "' WHERE codigo=" . $this->getCodigo();
+         pass = '" . $this->getPass() . "' WHERE codigo=" . $this->getCodigo();
         $conexion->exec($insertar); //ejecutamos
     }
 
@@ -177,10 +176,10 @@ class Persona
         $conexion = ConexionDB::conectar(); //conectamos
 
         if (!is_null($conexion)) {
-            $consulta = $conexion->query("SELECT * FROM personas WHERE nombre=$nombre");
+            $consulta = $conexion->query("SELECT * FROM personas WHERE nombre like '%$nombre%'");
             $persona = $consulta->fetchObject();
 
-            return new Persona($persona->codigo, $persona->nombre, $persona->apellidos, $persona->pass, $persona->foto, $persona->administrador);
+            return new Persona($persona->codigo, $persona->nombre, $persona->apellidos, $persona->pass);
         }
     }
     public function borrarAlumno()
@@ -196,10 +195,10 @@ class Persona
         $conexion = ConexionDB::conectar(); //conectamos
 
         if (!is_null($conexion)) {
-            $consulta = $conexion->query("SELECT * FROM personas WHERE codigo=$codigo");
+            $consulta = $conexion->query("SELECT * FROM personas WHERE codigo like '$codigo'");
             $persona = $consulta->fetchObject();
 
-            return new Persona($persona->codigo, $persona->nombre, $persona->apellidos, $persona->pass, $persona->foto, $persona->administrador);
+            return new Persona($persona->codigo, $persona->nombre, $persona->apellidos, $persona->pass);
         }
     }
     public static function esAdministrador($nombre)

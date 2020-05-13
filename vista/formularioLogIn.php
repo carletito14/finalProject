@@ -43,7 +43,7 @@ ini_set('display_errors','on');//   salgan errores.
             </div>
             <label for="exampleFormControlInput1">Contraseña</label>
             <div class="col-6 offset-3">
-                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="**********" name="pass">
+                <input type="password" class="form-control" id="exampleFormControlInput1" required placeholder="**********" name="pass">
             </div>
 
         </div>

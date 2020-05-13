@@ -9,6 +9,8 @@ if (!isset($_SESSION['nombre']) && (!isset($_SESSION['pass']))) { //si no existe
     window.location.href="..";
     </script>';
 }else {
+    
  include_once "../vista/listaUsuarioNormal.php";
+
     
 }

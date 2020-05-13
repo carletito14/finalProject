@@ -1,7 +1,5 @@
 <?php
-error_reporting(E_ALL); //           Esto para que 
-ini_set('display_errors', 'on'); //   salgan errores.
-include_once "../controlador/listaUsuarioNormal.php";
+include_once "../controlador/listaUsuarioAdmin.php";
 
 //estructura de la página
 ?>
@@ -26,9 +24,8 @@ include_once "../controlador/listaUsuarioNormal.php";
             <nav class="nav" id="cabecera">
                 <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
                 <a class="nav-link" href="../controlador/quienesSomos.php">Mis Libros</a>
-                <a class="nav-link" href="../controlador/misDatos.php">Mis Datos</a>
+                <a class="nav-link" href="../controlador/quienesSomos.php">Mis Datos</a>
                 <a class="nav-link" href="../controlador/cerrarSesion.php">Cerrar Sesión</a>
-               
             </nav>
         </div>
 
@@ -36,7 +33,19 @@ include_once "../controlador/listaUsuarioNormal.php";
 
             <!--Contenido del cuerpo-->
             <div class="card">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
+
+
+                </div>
+                <div class="col-md-2 offset-md-2">
+                <button type="button" class="btn btn-info">Añadir Libro</button>
+
+                </div>
+
+            </div>
+               
 
                 <div class="container text-center" id="libros">
                     <div class="row">
@@ -46,7 +55,7 @@ include_once "../controlador/listaUsuarioNormal.php";
                                 <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
                                 </div>
                             </div>
 
@@ -57,19 +66,7 @@ include_once "../controlador/listaUsuarioNormal.php";
                                 <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
                                 </div>
                             </div>
 
@@ -81,7 +78,19 @@ include_once "../controlador/listaUsuarioNormal.php";
                                 <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm">
+
+
+                            <div class="card" style="width: 13rem;">
+                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">Autor</p>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +103,7 @@ include_once "../controlador/listaUsuarioNormal.php";
                                 <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
                                 </div>
                             </div>
 
@@ -105,19 +114,7 @@ include_once "../controlador/listaUsuarioNormal.php";
                                 <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
                                 </div>
                             </div>
 
@@ -129,7 +126,19 @@ include_once "../controlador/listaUsuarioNormal.php";
                                 <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm">
+
+
+                            <div class="card" style="width: 13rem;">
+                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">Autor</p>
+                                    <a href="#" class="btn btn-primary">Modificar</a>
                                 </div>
                             </div>
                         </div>

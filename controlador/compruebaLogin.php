@@ -11,7 +11,7 @@ $nombre = $_REQUEST['nombre']; //si este nombre no está en la bbdd, debe regist
 $pass = $_REQUEST['pass']; //si este nombre no está en la bbdd, debe registrarse
 $nombreRegistrado = Persona::saberSiEstaNombre($nombre);
 $contraseñaRegistrada = Persona::saberSiEstaContrasenia($pass);
-
+$saberAdministrador = Persona::esAdministrador($nombreRegistrado);
 
 if (($nombreRegistrado > 0) && ($contraseñaRegistrada > 0)) {
 

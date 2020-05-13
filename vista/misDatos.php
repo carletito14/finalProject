@@ -1,16 +1,17 @@
 <?php
 error_reporting(E_ALL); //           Esto para que 
 ini_set('display_errors', 'on'); //   salgan errores.
+include_once "../controlador/misDatos.php";
+
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Registro</title>
+    <title>Mis datos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="../funciones/funcionesAnonimo.js" language="Javascript"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -27,7 +28,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
                 <li class="nav-item active">
 
                     <a class="nav-link"><strong>
-                            <h3>Registro</h3>
+                            <h3>Modificar mis datos</h3>
                         </strong>
                     </a>
                 </li>
@@ -36,50 +37,55 @@ ini_set('display_errors', 'on'); //   salgan errores.
         </div>
     </nav>
 
-    <form class="justify-content-center text-center" action="#.php">
+    <form class="justify-content-center text-center" action="../controlador/misDatos.php">
         <div class="form-group justify-content-center">
+
+
+
+            <div class="d-flex justify-content-center">
+
+                <h3><?php echo $persona->getApellidos();
+                    echo ", ";
+                    echo $persona->getNombre(); ?> &nbsp&nbsp&nbsp<span class="badge badge-secondary">Código -><?php echo $persona->getCodigo(); ?></span></h3>
+            </div>
+            <div class="col-6 offset-3">
+                <input type="hidden" name="codigo" value="<?=$persona->getCodigo();?>">
+
+                
+            </div>
             <label for="exampleFormControlInput1">Usuario</label>
             <div class="col-6 offset-3">
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el nombre del usuario" required name="nombre">
+                <input type="text" class="form-control" id="exampleFormControlInput1" required name="nombre" value="<?= $persona->getNombre();?>">
             </div>
-            <label for="exampleFormControlInput1">Correo Electrónico</label>
+            <label for="exampleFormControlInput1">Correo electrónico</label>
             <div class="col-6 offset-3">
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el correo electrónico" required name="apellidos">
+                <input type="text" class="form-control" id="exampleFormControlInput1" required value="<?= $persona->getApellidos(); ?>" name="apellidos">
             </div>
-
-            <label for="exampleFormControlInput1">Contraseña</label>
+            <label for="exampleFormControlInput1">Password</label>
             <div class="col-6 offset-3">
-                <input type="password" class="form-control" id="pass" placeholder="**********" required name="pass">
-            </div>
-            <label for="exampleFormControlInput1">Repite la contraseña</label>
-            <div class="col-6 offset-3">
-                <input type="password" class="form-control" id="pass1" placeholder="**********" required name="pass1">
+                <input type="password" class="form-control" id="exampleFormControlInput1" required placeholder="*****" name="pass">
             </div>
 
-            <label for="exampleFormControlInput1">Administrador</label>
-            <div class="col-6 offset-3">
+        </div>
 
-                <label><input type="checkbox" name="administradorSI"> </label><br>
+        <button type="submit" name="modificaPersona" class="btn btn-outline-primary" href="../controlador/misDatos.php">Modificar</button>
 
+    </form> <br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
 
-            </div>
-            <button type="submit" value="Verificar" name="botonRegistrar" class="btn btn-outline-primary" href="registraUsuario.php">Registrar</button>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button><br><br>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="..">Volver al Inicio</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="..">Volver al Inicio</a>
 
-                        </li>
+                </li>
 
-                    </ul>
-                </div>
-            </nav>
-    </form>
-
+            </ul>
+        </div>
+    </nav>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
