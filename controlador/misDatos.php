@@ -9,11 +9,21 @@ $persona = Persona::getPersonaByNombre($_SESSION['nombre']);
 if (isset($_REQUEST['modificaPersona'])) {
     $persona = Persona::getPersonaById($_REQUEST['codigo']);
 
-    if (Persona::saberSiEstaNombre($_REQUEST['nombre']) == 0) {//si no hay nadie que se llame así, metemos valores
+    if (Persona::saberSiEstaNombre($_REQUEST['nombre']) == 0) { //si no hay nadie que se llame así, metemos valores
         $persona->setNombre($_REQUEST['nombre']);
         $persona->setApellidos($_REQUEST['apellidos']);
         $persona->setPass($_REQUEST['pass']);
-        $persona->update();//actualizamo persona
+        $persona->update(); //actualizamo persona
+        $_SESSION['nombre'] = $persona->getNombre(); //actualizamos la sesión
+        //metemos la consula en la bbdd
+        echo '<script type="text/javascript">
+        alert("Usuario modificado correctamente.");
+        window.location.href="..";
+        </script>';
+    } elseif ($_REQUEST['nombre'] == $_SESSION['nombre']) { //si quieren modificar otro campo que no sea el del nombre
+        $persona->setApellidos($_REQUEST['apellidos']);     // pero quieren dejar un nombre ya registado
+        $persona->setPass($_REQUEST['pass']);
+        $persona->update(); //actualizamo persona
         $_SESSION['nombre'] = $persona->getNombre(); //actualizamos la sesión
         //metemos la consula en la bbdd
         echo '<script type="text/javascript">
