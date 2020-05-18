@@ -28,7 +28,7 @@ include_once "../controlador/listaUsuarioNormal.php";
                 <a class="nav-link" href="../controlador/quienesSomos.php">Mis Libros</a>
                 <a class="nav-link" href="../controlador/misDatos.php">Mis Datos</a>
                 <a class="nav-link" href="../controlador/cerrarSesion.php">Cerrar Sesión</a>
-               
+
             </nav>
         </div>
 
@@ -39,102 +39,29 @@ include_once "../controlador/listaUsuarioNormal.php";
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
 
                 <div class="container text-center" id="libros">
+
+                    <!---Aquí empiezan los libros a ser introducidos-->
                     <div class="row">
-                        <div class="col-sm">
+                        <?php
 
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
+                        foreach ($libro as $value) {
+                        ?>
+                            <div class="col-sm">
+
+
+                                <div class="card" style="width: 13rem;">
+                                    <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text"><?= $value->getAutor(); ?></p>
+                                        <p class="card-text"><?= $value->getNombre(); ?></p>
+                                        <a href="#" class="btn btn-primary">Alquilar</a>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <br><br>
-                    <!--Secong row-->
-                    <div class="row">
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Alquilar</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
-
 
                 </div>
 

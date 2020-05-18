@@ -1,18 +1,17 @@
 <?php
 include_once "../modelo/ConexionDB.php";
 //codigo, nombre, autor, descripción.
-class Persona
+class Libro
 {
     private $codigo, $nombre, $autor, $descripcion;
 
-    public function __construct($codigo, $nombre = "", $autor = "", $descripcion = "") //se sobrecarga el método(opcional)
+    public function __construct($codigo, $nombre = "", $autor = "", $descripcion = "") 
     {
         $this->codigo = $codigo;
         $this->nombre = $nombre;
         $this->autor = $autor;
         $this->descripcion = $descripcion;
     }
-
 
 
     /**
@@ -144,9 +143,10 @@ class Persona
             $salida = [];
             while ($libro = $consulta->fetchObject()) {
 
-                $salida[] = new Persona($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
+                $salida[] = new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
             }
             return $salida;
         }
     }
 }
+?>
