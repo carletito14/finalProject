@@ -4,6 +4,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
 include_once "../modelo/Persona.php";
 include_once "../modelo/Libros.php";
 $personas = Persona::getPersonas();//almacenamos todas las personas en esta variable
+$libro = Libro::getLibros(); //lo mismo para los libros
 
 session_start();
 if (!isset($_SESSION['nombre']) && (!isset($_SESSION['pass']))) { //si no existe la sesión nombre

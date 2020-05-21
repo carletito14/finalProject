@@ -13,7 +13,16 @@ class Libro
         $this->descripcion = $descripcion;
     }
 
+    public static function totalLibros()
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+        
 
+            $consulta = $conexion->query("SELECT COUNT(codigo) as cantidad FROM libros");
+            $libro = $consulta->fetchColumn();
+            $libro=$libro/2;
+            echo $libro;
+    }
     /**
      * Get the value of codigo
      */
@@ -148,5 +157,39 @@ class Libro
             return $salida;
         }
     }
+
+
+    public static function getLibrosLimit($valor) //para lista listar los libros
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+        
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT * FROM libros LIMIT $valor,4");
+            
+            $salida = [];
+            while ($libro = $consulta->fetchObject()) {
+
+                $salida[] = ['codigo'=>$libro->codigo,'nombre'=>$libro->nombre, 'autor'=>$libro->autor, 'descripcion'=>$libro->descripcion];
+            }
+            return $salida;
+        }
+    }
+    public static function getLibrosTotales()
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT count(*) FROM libros");
+            $salida = [];
+            while ($libro = $consulta->fetchObject()) {
+
+                $salida[] = new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
+            }
+            return $salida;
+        }
+    }
+
+
 }
 ?>

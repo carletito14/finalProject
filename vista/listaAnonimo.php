@@ -12,7 +12,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../estilos/estilos.css">
-	<script src="../funciones/funcionesAnonimo.js" language="Javascript"></script>    
+    <script src="../funciones/funcionesAnonimo.js" language="Javascript"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -32,118 +32,43 @@ ini_set('display_errors', 'on'); //   salgan errores.
         <div class="cuerpo">
 
             <!--Contenido del cuerpo-->
+
             <div class="card">
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
 
                 <div class="container text-center" id="libros">
+
+                    <!---Aquí empiezan los libros a ser introducidos-->
                     <div class="row">
-                        <div class="col-sm">
+                        <?php
 
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
+                        foreach ($libro as $value) {
+                        ?>
+                            <div class="col-sm">
 
 
+                                <div class="card" style="width: 13rem;">
+                                    <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text"><?= $value->getAutor(); ?></p>
+                                        <p class="card-text"><?= $value->getNombre(); ?></p>
+                                        <a href="#" class="btn btn-primary">Alquilar</a>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <br><br>
-                    <!--Secong row-->
-                    <div class="row">
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <button type="button" class="btn btn-primary" onclick="myFunction()">Alquilar</button>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
-
 
                 </div>
 
             </div>
         </div><br>
         <!--Pagination-->
-       
 
-        
+
+
         <!-- Footer -->
 
         <div class="footer">
