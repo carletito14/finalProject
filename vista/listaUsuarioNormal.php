@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL); //           Esto para que 
 ini_set('display_errors', 'on'); //   salgan errores.
-include_once "../controlador/listaUsuarioNormal.php";
+//include_once "../controlador/listaUsuarioNormal.php";
 
 ?>
 <!doctype html>
@@ -41,20 +41,73 @@ include_once "../controlador/listaUsuarioNormal.php";
             <div class="card">
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
 
-                <div class="container text-center" id="libros">
-                    <!---Aquí empiezan los libros a ser introducidos-->
-                    <div class="row" id="muestraLibros">
+                <!---Buscador-->
+                <div class="col">
+                    <div class="col-md-9 offset-md-9">
 
+                        <!---Formulario-->
+                        <form action="../controlador/buscaLibro.php" method="post" class="form-inline">
+                            <input class="form-control mr-sm-9" type="search" placeholder="Título del libro" aria-label="Search" name="nombreLibro">
+                            <button class="btn btn-outline-success my-2 my-sm-9" name="buscar" type="submit">Buscar</button>
+                        </form>
+                        <!---Formulario-->
 
                     </div>
-                    
                 </div>
-                
-            </div>
-            <div class="row" id="paginacion">
+
+                <?php
+                if (!isset($_REQUEST['nombreLibro'])) {
+
+
+                ?>
+                    <div class="container text-center" id="libros">
+                        <!---Aquí empiezan los libros a ser introducidos-->
+                        <div class="row" id="muestraLibros">
+
+                        </div>
+
                     </div>
-        </div><br>
+
+            
+
+            <?php
+                } else {
+
+
+                    foreach ($nombreLibro as $value) {
+
+
+            ?>
+            <div class="col">
+                    <div class="card" style="width: 13rem;">
+                        <img src="../imagenes/Biblioteca.png" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text"><?= $value->getNombre() ?></p>
+                            <p class="card-text"><?= $value->getAutor() ?></p>
+                            <a href="#" class="btn btn-primary">Modificar</a>
+                        </div>
+                        </div>
+                    </div>
+        <?php
+        
+                    }
+                    
+                    ?>
+            <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
+
+                    <?php
+                }
+
+        ?>
+
+</div>
+        
+
         <!---pagination-->
+        <div class="row" id="paginacion">
+        </div>
+        </div><br>
+
         <!---
         <nav aria-label="Page navigation example">
             <ul class="pagination" id="">

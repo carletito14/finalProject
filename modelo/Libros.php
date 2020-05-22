@@ -20,7 +20,7 @@ class Libro
 
             $consulta = $conexion->query("SELECT COUNT(codigo) as cantidad FROM libros");
             $libro = $consulta->fetchColumn();
-            $libro=$libro/2;
+            $libro=$libro/4;
             echo $libro;
     }
     /**
@@ -181,6 +181,20 @@ class Libro
 
         if (!is_null($conexion)) {
             $consulta = $conexion->query("SELECT count(*) FROM libros");
+            $salida = [];
+            while ($libro = $consulta->fetchObject()) {
+
+                $salida[] = new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
+            }
+            return $salida;
+        }
+    }
+    public static function getLibroByName($nombre)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT * FROM libros where nombre  LIKE '%$nombre%'");
             $salida = [];
             while ($libro = $consulta->fetchObject()) {
 
