@@ -203,6 +203,35 @@ class Libro
             return $salida;
         }
     }
+    public static function getLibroByCodigo($codigo)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT * FROM libros where codigo  LIKE '$codigo'");
+            $salida = [];
+            while ($libro = $consulta->fetchObject()) {
+
+                $salida[] = new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
+            }
+            return $salida;
+        }
+    }
+    public static function getIdPersonaByNombre($nombre)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT codigo FROM persona where nombre  LIKE '$nombre'");
+            $salida = [];
+            while ($libro = $consulta->fetchObject()) {
+
+                $salida[] = new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
+            }
+            return $salida;
+        }
+    }
+   
 
 
 }

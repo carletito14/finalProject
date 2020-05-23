@@ -214,5 +214,21 @@ class Persona
             return false;
         }
     }
+    
+    public static function getIdByNombre($nombre)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT codigo FROM personas where nombre  LIKE '$nombre'");
+            $salida = [];
+            while ($persona = $consulta->fetchObject()) {
+
+                $salida[] = new Persona($persona->codigo);
+            }
+            return $salida;
+        }
+    }
+
 
 }

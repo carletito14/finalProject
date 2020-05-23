@@ -84,7 +84,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
                         <div class="card-body">
                             <p class="card-text"><?= $value->getNombre() ?></p>
                             <p class="card-text"><?= $value->getAutor() ?></p>
-                            <a href="#" class="btn btn-primary">Modificar</a>
+                            <a href="../controlador/libroDetalles.php?codigo=<?=$value->getCodigo()?>"id="valoresPhp" class="btn btn-primary">Saber más</a>
                         </div>
                         </div>
                     </div>

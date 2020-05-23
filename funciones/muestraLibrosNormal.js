@@ -41,7 +41,7 @@ function cargar() {
                     a.classList.add('btn')
                     a.classList.add('btn-primary')
                     a.innerHTML = 'Saber más'
-                    a.href = "#"
+                    a.href = "../controlador/libroDetalles.php?codigo="+ element.codigo; //enviamos el libro a otra página donde se recogerán sus parámetros.
 
                     div2.appendChild(p)
                     div2.appendChild(p2)
@@ -118,5 +118,5 @@ function paginacion() {
 
 function cambiarPagina(a){
 console.log(a.target.innerHTML)
-//hACER AJAX QUE ENVIE 2 NUMEROS 
+
 }
