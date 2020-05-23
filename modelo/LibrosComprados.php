@@ -65,5 +65,15 @@ class LibrosComprados
         $conexion->exec($insertar); //ejecutamos
         
     }
-     
+    public static function getLibrosByIdUsuario($idCliente)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT idLibro FROM librosComprados WHERE idCliente like '$idCliente'");
+            $libros = $consulta->fetchObject();
+
+            return new LibrosComprados($libros->idLibro);
+        }
+    }
 }

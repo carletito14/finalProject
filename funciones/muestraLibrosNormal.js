@@ -1,9 +1,11 @@
 addEventListener('load', cargar)
-
-
+var pagina = 0
+var boton= 0
 function cargar() {
-
+    document.getElementById('muestraLibros').innerHTML = ""
+    document.getElementById('paginacion').innerHTML = ""
     //recoger la id
+
     var id = document.getElementById('muestraLibros')
 
 
@@ -12,17 +14,19 @@ function cargar() {
 
             if (this.readyState == 4 && this.status == 200) {
                 var datos = JSON.parse(this.responseText)
-                console.log(datos)
                 datos.forEach(element => {
                     var div = document.createElement('div')
                     div.classList.add('col-sm')
+                    div.classList.add('mb-2')
+                    div.classList.add('mt-2')
+                    div.classList.add('centrado')
 
                     var card = document.createElement('div')
                     card.classList.add('card')
                     card.style.width = '13rem'
 
                     var img = document.createElement('img')
-                    img.src = '../imagenes/Biblioteca.png' //para cambiar imagenees de libro
+                    img.src = '../imagenes/'+element.codigo+'.jpg' //para cambiar imagenees de libro
                     img.classList.add('card-img-top')
 
                     var div2 = document.createElement('div')
@@ -41,7 +45,7 @@ function cargar() {
                     a.classList.add('btn')
                     a.classList.add('btn-primary')
                     a.innerHTML = 'Saber más'
-                    a.href = "../controlador/libroDetalles.php?codigo="+ element.codigo; //enviamos el libro a otra página donde se recogerán sus parámetros.
+                    a.href = "../controlador/libroDetalles.php?codigo=" + element.codigo; //enviamos el libro a otra página donde se recogerán sus parámetros.
 
                     div2.appendChild(p)
                     div2.appendChild(p2)
@@ -68,7 +72,7 @@ function cargar() {
 
     xhttp.open('POST', '../controlador/librosByNum.php', true)
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xhttp.send("num= 0")
+    xhttp.send("num= " + pagina)
 
     paginacion()
 }
@@ -76,6 +80,7 @@ function cargar() {
 
 function paginacion() {
 
+    
     var pag = document.getElementById('paginacion')
 
     var xhttp2 = new XMLHttpRequest()
@@ -88,18 +93,31 @@ function paginacion() {
 
                 cantidad = parseInt(cantidad);
                 var div = document.createElement('div')
+
+                var div2 = document.createElement('div')
+                div.className = "pagHijo"
                 for (let i = 0; i < cantidad; i++) {
-                    var div2 = document.createElement('div')
+
                     var a = document.createElement('button')
-                    a.innerHTML = i+1
+                    a.innerHTML = i + 1
+                    a.value = i * 8
                     a.name = "paginas"
+                    a.className = ""
+                    if (i!=boton) {
+                        //LAS DEMAS PAGINAS
+                        a.className = "hijoPag btn btn-info mt-3 mb-3"  
+                    }
+                    else{
+                        //ESTE ES LA PÁGINA SELECCIONADA
+                        a.className = "hijoPag btn btn-outline-info"
 
-                    div2.appendChild(a)
-                    div.appendChild(div2)
-
+                    }
+                    
+                    div.appendChild(a)
+                    div2.appendChild(div)
                 }
 
-                
+
                 pag.appendChild(div)
                 var paginasClick = document.getElementsByName('paginas')
                 for (let i = 0; i < paginasClick.length; i++) {
@@ -116,7 +134,8 @@ function paginacion() {
     xhttp2.send()
 }
 
-function cambiarPagina(a){
-console.log(a.target.innerHTML)
-
+function cambiarPagina(a) {
+    pagina = parseInt(a.target.value)
+    boton = parseInt(a.target.innerHTML)-1
+    cargar()
 }

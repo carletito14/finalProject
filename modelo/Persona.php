@@ -229,6 +229,20 @@ class Persona
             return $salida;
         }
     }
+    public function getLibrosComprados()
+    {
+        include_once "../modelo/Libros.php";
+        $conexion = ConexionDB::conectar(); //conectamos
+            //consulta
+            $consulta = "SELECT * from personas WHERE codigo in (SELECT idCliente FROM librosComprados WHERE idLibro = ".$this->getIdLibro().")";
+            $alumnos=$conexion->query($consulta); //ejecutamos
+            $salida=[];
+            
+            while ($alumno = $alumnos->fetchObject()) {
 
+                $salida[] = new LibrosComprados($alumno->idCliente, $alumno->idLibro);
+            }
+            return $salida;
+    }
 
 }

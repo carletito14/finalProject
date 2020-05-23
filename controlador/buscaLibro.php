@@ -7,6 +7,7 @@ if (!isset($_REQUEST['nombreLibro'])) {
 }else {
     $libroIntroducido = $_REQUEST['nombreLibro'];
     $nombreLibro = Libro::getLibroByName($libroIntroducido);
+    
 
 include_once "../vista/listaUsuarioNormal.php";
 }

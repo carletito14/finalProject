@@ -20,7 +20,7 @@ class Libro
 
             $consulta = $conexion->query("SELECT COUNT(codigo) as cantidad FROM libros");
             $libro = $consulta->fetchColumn();
-            $libro=$libro/4;
+            $libro=ceil($libro/8);
             echo $libro;
     }
     /**
@@ -165,7 +165,7 @@ class Libro
         
 
         if (!is_null($conexion)) {
-            $consulta = $conexion->query("SELECT * FROM libros LIMIT $valor,4");
+            $consulta = $conexion->query("SELECT * FROM libros LIMIT $valor,8");
             
             $salida = [];
             while ($libro = $consulta->fetchObject()) {

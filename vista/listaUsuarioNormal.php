@@ -25,7 +25,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
         <div class="cabeceraTotal">
             <nav class="nav" id="cabecera">
                 <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
-                <a class="nav-link" href="../controlador/quienesSomos.php">Mis Libros</a>
+                <a class="nav-link" href="../controlador/misLibros.php">Mis Libros</a>
                 <a class="nav-link" href="../controlador/misDatos.php">Mis Datos</a>
                 <a class="nav-link" href="../controlador/cerrarSesion.php">Cerrar Sesión</a>
 
@@ -80,7 +80,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
             ?>
             <div class="col">
                     <div class="card" style="width: 13rem;">
-                        <img src="../imagenes/Biblioteca.png" class="card-img-top">
+                        <img src="../imagenes/<?=$codigoLibro?>.jpg" class="card-img-top">
                         <div class="card-body">
                             <p class="card-text"><?= $value->getNombre() ?></p>
                             <p class="card-text"><?= $value->getAutor() ?></p>
@@ -104,7 +104,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
         
 
         <!---pagination-->
-        <div class="row" id="paginacion">
+        <div class="col centrado" id="paginacion" >
         </div>
         </div><br>
 

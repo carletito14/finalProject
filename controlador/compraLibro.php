@@ -27,9 +27,5 @@ if (isset($idUsuario)) {
     alert("Libro comprado con éxito.");
     window.location.href="../controlador/index.php";
     </script>';
-    /*
-    echo '<script type="text/javascript">
-    alert("Libro comprado correcamente, por favor, visite el apartado "Mis libros" para más información. Gracias por su compra.");
-    window.location.href="..";
-    </script>';*/
+   
 }

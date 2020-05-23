@@ -1,41 +1,59 @@
-.container{
-    background-color: green ;
+.container {
+    background-color: green;
     color: black;
     margin-top: 20px;
 }
-.cabeceraTotal{
+
+.cabeceraTotal {
     width: 90%;
-   height: 115px;
-   margin: auto;
-   background-color: blue;
-   border: red 5px double;
+    height: 115px;
+    margin: auto;
+    background-color: blue;
+    border: red 5px double;
 }
-#cabecera{
+
+#cabecera {
     margin: auto;
     display: flex;
     flex-grow: 4;
     justify-content: space-between;
 
 }
-#imgCabecera{
-    width:190px;
-    height:100px;
-    border-radius:150px;
+
+#imgCabecera {
+    width: 190px;
+    height: 100px;
+    border-radius: 150px;
 }
-.cuerpo
-{
+
+.cuerpo {
     width: 90%;
     margin: auto;
     background-color: red;
     margin-top: 20px;
 }
-.footer{
+
+.footer {
     margin: auto;
     margin-top: 20px;
     background-color: red;
     width: 100%;
 }
-#mapa{
+
+#mapa {
     margin: auto;
     width: 10%;
+}
+
+
+.centrado {
+    display: flex;
+    justify-content: center;
+}
+
+
+.pagHijo button {
+    display: flex;
+    justify-content: center;
+    
 }
