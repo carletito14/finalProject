@@ -1,6 +1,7 @@
 addEventListener('load', cargar)
 var pagina = 0
-var boton= 0
+var boton = 0
+
 function cargar() {
     document.getElementById('muestraLibros').innerHTML = ""
     document.getElementById('paginacion').innerHTML = ""
@@ -16,17 +17,17 @@ function cargar() {
                 var datos = JSON.parse(this.responseText)
                 datos.forEach(element => {
                     var div = document.createElement('div')
+                    div.classList.add('centrado')
                     div.classList.add('col-sm')
                     div.classList.add('mb-2')
                     div.classList.add('mt-2')
-                    div.classList.add('centrado')
 
                     var card = document.createElement('div')
                     card.classList.add('card')
                     card.style.width = '13rem'
 
                     var img = document.createElement('img')
-                    img.src = '../imagenes/'+element.codigo+'.jpg' //para cambiar imagenees de libro
+                    img.src = '../imagenes/' + element.codigo + '.jpg' //para cambiar imagenees de libro
                     img.classList.add('card-img-top')
 
                     var div2 = document.createElement('div')
@@ -80,7 +81,7 @@ function cargar() {
 
 function paginacion() {
 
-    
+
     var pag = document.getElementById('paginacion')
 
     var xhttp2 = new XMLHttpRequest()
@@ -103,16 +104,15 @@ function paginacion() {
                     a.value = i * 8
                     a.name = "paginas"
                     a.className = ""
-                    if (i!=boton) {
+                    if (i != boton) {
                         //LAS DEMAS PAGINAS
-                        a.className = "hijoPag btn btn-info mt-3 mb-3"  
-                    }
-                    else{
+                        a.className = "hijoPag btn btn-info mt-3 mb-3"
+                    } else {
                         //ESTE ES LA PÁGINA SELECCIONADA
                         a.className = "hijoPag btn btn-outline-info"
 
                     }
-                    
+
                     div.appendChild(a)
                     div2.appendChild(div)
                 }
@@ -136,6 +136,6 @@ function paginacion() {
 
 function cambiarPagina(a) {
     pagina = parseInt(a.target.value)
-    boton = parseInt(a.target.innerHTML)-1
+    boton = parseInt(a.target.innerHTML) - 1
     cargar()
 }

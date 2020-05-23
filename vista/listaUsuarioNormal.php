@@ -60,7 +60,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
 
 
                 ?>
-                    <div class="container text-center" id="libros">
+                    <div class="container" id="libros">
                         <!---Aquí empiezan los libros a ser introducidos-->
                         <div class="row" id="muestraLibros">
 
@@ -68,56 +68,45 @@ ini_set('display_errors', 'on'); //   salgan errores.
 
                     </div>
 
-            
 
-            <?php
+
+                    <?php
                 } else {
 
 
                     foreach ($nombreLibro as $value) {
 
 
-            ?>
-            <div class="col">
-                    <div class="card" style="width: 13rem;">
-                        <img src="../imagenes/<?=$codigoLibro?>.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-text"><?= $value->getNombre() ?></p>
-                            <p class="card-text"><?= $value->getAutor() ?></p>
-                            <a href="../controlador/libroDetalles.php?codigo=<?=$value->getCodigo()?>"id="valoresPhp" class="btn btn-primary">Saber más</a>
-                        </div>
-                        </div>
-                    </div>
-        <?php
-        
-                    }
-                    
                     ?>
-            <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
-
+                        <div class="col centrado">
+                            <div class="card" style="width: 13rem;">
+                             <!--   <img src="../imagenes/%<?=$codigoLibro ?>%.jpg" class="card-img-top"> --->
+                                <div class="card-body">
+                                    <p class="card-text"><?= $value->getNombre() ?></p>
+                                    <p class="card-text"><?= $value->getAutor() ?></p>
+                                    <a href="../controlador/libroDetalles.php?codigo=<?= $value->getCodigo() ?>" id="valoresPhp" class="btn btn-primary">Saber más</a>
+                                </div>
+                            </div>
+                        </div>
                     <?php
+
+                    }
+
+                    ?>
+                    <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
+
+                <?php
                 }
 
-        ?>
+                ?>
 
-</div>
-        
+            </div>
 
-        <!---pagination-->
-        <div class="col centrado" id="paginacion" >
-        </div>
+
+            <!---pagination-->
+            <div class="col centrado" id="paginacion">
+            </div>
         </div><br>
-
-        <!---
-        <nav aria-label="Page navigation example">
-            <ul class="pagination" id="">
-                <li class="page-item"><a class="page-link" href="#">Atrás</a></li>
-                <li class="page-item"><a class="page-link" href="#"></a></li>
-                <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
-
-            </ul>
-        </nav>
--->
         <!-- Footer -->
 
 
