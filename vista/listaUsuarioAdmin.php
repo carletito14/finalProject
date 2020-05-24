@@ -1,7 +1,7 @@
 <?php
-include_once "../controlador/listaUsuarioAdmin.php";
-
-//estructura de la página
+error_reporting(E_ALL); //           Esto para que 
+ini_set('display_errors', 'on'); //   salgan errores.
+//include_once "../controlador/listaUsuarioNormal.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,143 +17,94 @@ include_once "../controlador/listaUsuarioAdmin.php";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+
 <body>
     <div class="container">
         <!---Cabecera-->
         <div class="cabeceraTotal">
             <nav class="nav" id="cabecera">
                 <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
-                <a class="nav-link" href="../controlador/quienesSomos.php">Mis Libros</a>
-                <a class="nav-link" href="../controlador/quienesSomos.php">Mis Datos</a>
+                <a class="nav-link" href="">Usuarios</a>
                 <a class="nav-link" href="../controlador/cerrarSesion.php">Cerrar Sesión</a>
+
             </nav>
         </div>
 
         <div class="cuerpo">
 
             <!--Contenido del cuerpo-->
-            <div class="card">
-            <div class="row">
-                <div class="col-md-4 offset-md-4">
+            <div id="centrado">
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
+                
 
+                <!---añade-->
+                <div class="col">
+                    <div class="col-md-9 offset-md-9">
 
+                        <a href="../controlador/aniadeLibro.php?totalLibros=<?=$librosTotales?>"><button type="button" class="btn btn-info">Añadir Libro</button></a>                        
+                        <!---añade-->
+
+                    </div>
                 </div>
-                <div class="col-md-2 offset-md-2">
-                <button type="button" class="btn btn-info">Añadir Libro</button>
 
-                </div>
+                <?php //esto se hace cuando se busca un libro, ya que se usa php y no ajax
+                if (!isset($_REQUEST['nombreLibro'])) {
 
-            </div>
-               
 
-                <div class="container text-center" id="libros">
-                    <div class="row">
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
+                ?>
+                    <div class="container" id="libros">
+                        <!---Aquí empiezan los libros a ser introducidos-->
+                        <div class="row" id="muestraLibros">
 
                         </div>
-                        <div class="col-sm">
 
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <br><br>
-                    <!--Secong row-->
-                    <div class="row">
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm">
-
-
-                            <div class="card" style="width: 13rem;">
-                                <img src="../imagenes/Biblioteca.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Autor</p>
-                                    <a href="#" class="btn btn-primary">Modificar</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
 
-                </div>
+
+                    <?php
+                } else {
+
+
+                    foreach ($nombreLibro as $value) {
+
+
+                    ?>
+                        <div class="col centrado">
+                            <div class="card" style="width: 13rem;">
+                                <!--   <img src="../imagenes/%<?= $codigoLibro ?>%.jpg" class="card-img-top"> --->
+                                <div class="card-body">
+                                    <p class="card-text"><?= $value->getNombre() ?></p>
+                                    <p class="card-text"><?= $value->getAutor() ?></p>
+                                    <a href="../controlador/libroDetalles.php?codigo=<?= $value->getCodigo() ?>" id="valoresPhp" class="btn btn-primary">Saber más</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+
+                    }
+
+                    ?>
+                    <div class="col centrado">
+                        <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
+                    </div>
+                <?php
+                }
+
+                ?>
 
             </div>
-        </div><br>
-        <!--Pagination-->
 
 
-
+            <!---pagination-->
+            <div class="col centrado" id="paginacion">
+            </div>
+        </div>
+       <br>
         <!-- Footer -->
+
+
+
 
         <div class="footer">
             <footer class="page-footer font-small blue pt-4">
@@ -217,6 +168,7 @@ include_once "../controlador/listaUsuarioAdmin.php";
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="../funciones/muestraLibrosNormal.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 

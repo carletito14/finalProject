@@ -1,3 +1,5 @@
+//NO LO USO PORQUE HE ADAPTADO OTRO PARA OPTIMIZAR.
+/*
 addEventListener('load', cargar)
 
 
@@ -119,4 +121,4 @@ function paginacion() {
 function cambiarPagina(a){
 console.log(a.target.innerHTML)
 //hACER AJAX QUE ENVIE 2 NUMEROS 
-}
+}*/

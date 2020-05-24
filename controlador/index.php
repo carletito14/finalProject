@@ -14,6 +14,8 @@ if (!isset($_SESSION['nombre']) && (!isset($_SESSION['pass']))) { //si no existe
         include_once "../controlador/listaUsuarioNormal.php";
     
 }else {
+    
+    $librosTotales = Libro::getCountLibros();//recogemos el total de todos los libros
     include_once "../controlador/listaUsuarioAdmin.php";
 
 }

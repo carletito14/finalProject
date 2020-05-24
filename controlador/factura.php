@@ -10,7 +10,7 @@
     
 
 <?php
-session_start();
+//session_start();
 include_once "../modelo/Persona.php";
 include_once "../modelo/Libros.php";
 

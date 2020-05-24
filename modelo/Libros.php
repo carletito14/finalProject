@@ -5,7 +5,7 @@ class Libro
 {
     private $codigo, $nombre, $autor, $descripcion;
 
-    public function __construct($codigo, $nombre = "", $autor = "", $descripcion = "") 
+    public function __construct($codigo= "", $nombre = "", $autor = "", $descripcion = "") 
     {
         $this->codigo = $codigo;
         $this->nombre = $nombre;
@@ -113,8 +113,8 @@ class Libro
         $conexion = ConexionDB::conectar(); //conectamos
 
 
-        $insertar = "INSERT into libros(nombre,autor,descripcion,) VALUES
-    ('" . $this->nombre . "','" . $this->autor . "','" . $this->descripcion . "')";
+        $insertar = "INSERT into libros(codigo,nombre,autor,descripcion) VALUES
+    ('" . $this->codigo . "','" . $this->nombre . "','" . $this->autor . "','" . $this->descripcion . "')";
 
         $conexion->exec($insertar); //ejecutamos
 
@@ -157,6 +157,18 @@ class Libro
             return $salida;
         }
     }
+    public static function getCountLibros()
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $conexion = ConexionDB::conectar(); //conectamos
+
+            $consulta = $conexion->query("SELECT codigo FROM libros");
+    
+            return $consulta->rowCount();
+        }
+    }
 
 
     public static function getLibrosLimit($valor) //para lista listar los libros
@@ -175,20 +187,7 @@ class Libro
             return $salida;
         }
     }
-    public static function getLibrosTotales()
-    {
-        $conexion = ConexionDB::conectar(); //conectamos
 
-        if (!is_null($conexion)) {
-            $consulta = $conexion->query("SELECT count(*) FROM libros");
-            $salida = [];
-            while ($libro = $consulta->fetchObject()) {
-
-                $salida[] = new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
-            }
-            return $salida;
-        }
-    }
     public static function getLibroByName($nombre)
     {
         $conexion = ConexionDB::conectar(); //conectamos
@@ -246,5 +245,12 @@ class Libro
         }
     }
 
+    public static function saberSiEstaLibro($nombre)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
 
+        $consulta = $conexion->query("SELECT * FROM libros WHERE nombre like '$nombre'");
+
+        return $consulta->rowCount();
+    }
 }

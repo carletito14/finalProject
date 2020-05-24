@@ -1,5 +1,4 @@
 .container {
-    background-color: green;
     color: black;
     margin-top: 20px;
 }
@@ -8,8 +7,8 @@
     width: 90%;
     height: 115px;
     margin: auto;
-    background-color: blue;
-    border: red 5px double;
+    /*background-color: blue;
+    border: red 5px double;*/
 }
 
 #cabecera {
@@ -29,14 +28,14 @@
 .cuerpo {
     width: 90%;
     margin: auto;
-    background-color: red;
+   /* background-color: red;*/
     margin-top: 20px;
 }
 
 .footer {
     margin: auto;
     margin-top: 20px;
-    background-color: red;
+    /*background-color: red;*/
     width: 100%;
 }
 
@@ -57,3 +56,6 @@
    margin: auto;
     
 }
+
+
+

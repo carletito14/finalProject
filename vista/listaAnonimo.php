@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL); //           Esto para que 
 ini_set('display_errors', 'on'); //   salgan errores.
+//include_once "../controlador/listaUsuarioNormal.php";
 
 ?>
 <!doctype html>
@@ -12,11 +13,11 @@ ini_set('display_errors', 'on'); //   salgan errores.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../estilos/estilos.css">
-    <script src="../funciones/funcionesAnonimo.js" language="Javascript"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 
 <body>
     <div class="container">
@@ -32,29 +33,80 @@ ini_set('display_errors', 'on'); //   salgan errores.
         <div class="cuerpo">
 
             <!--Contenido del cuerpo-->
-
-            <!--Contenido del cuerpo-->
-            <div class="card">
+            <div id="centrado">
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
 
-                <div class="container text-center" id="libros">
-                    <!---Aquí empiezan los libros a ser introducidos-->
-                    <div class="row" id="muestraLibros">
+                <!---Buscador-->
+                <div class="col">
+                    <div class="col-md-9 offset-md-9">
 
+                        <!---Formulario buscar-->
+                        <form action="../controlador/buscaLibro.php" method="post" class="form-inline">
+                            <input class="form-control mr-sm-1" type="search" placeholder="Título del libro" aria-label="Search" name="nombreLibro">
+                            <button class="btn btn-outline-success my-2 my-sm-3" name="buscar" type="submit">Buscar</button>
+                        </form>
+                        <!---Formulario-->
+
+                    </div>
+                </div>
+
+                <?php //esto se hace cuando se busca un libro, ya que se usa php y no ajax
+                if (!isset($_REQUEST['nombreLibro'])) {
+
+
+                ?>
+                    <div class="container" id="libros">
+                        <!---Aquí empiezan los libros a ser introducidos-->
+                        <div class="row" id="muestraLibros">
+
+                        </div>
 
                     </div>
 
-                </div>
+
+
+                    <?php
+                } else {
+
+
+                    foreach ($nombreLibro as $value) {
+
+
+                    ?>
+                        <div class="col centrado">
+                            <div class="card" style="width: 13rem;">
+                                <!--   <img src="../imagenes/%<?= $codigoLibro ?>%.jpg" class="card-img-top"> --->
+                                <div class="card-body">
+                                    <p class="card-text"><?= $value->getNombre() ?></p>
+                                    <p class="card-text"><?= $value->getAutor() ?></p>
+                                    <a href="../controlador/libroDetalles.php?codigo=<?= $value->getCodigo() ?>" id="valoresPhp" class="btn btn-primary">Saber más</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+
+                    }
+
+                    ?>
+                    <div class="col centrado">
+                        <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
+                    </div>
+                <?php
+                }
+
+                ?>
 
             </div>
-            <div class="row" id="paginacion">
+
+
+            <!---pagination-->
+            <div class="col centrado" id="paginacion">
             </div>
         </div><br>
-        <!--Pagination-->
-
-
-
         <!-- Footer -->
+
+
+
 
         <div class="footer">
             <footer class="page-footer font-small blue pt-4">
@@ -116,9 +168,9 @@ ini_set('display_errors', 'on'); //   salgan errores.
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../funciones/muestraLibrosAnonimo.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="../funciones/muestraLibrosNormal.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 

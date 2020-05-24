@@ -32,13 +32,12 @@ ini_set('display_errors', 'on'); //   salgan errores.
             </nav>
         </div>
 
-        <!-- PAGINACIÓN -->
-
+      
 
         <div class="cuerpo">
 
             <!--Contenido del cuerpo-->
-            <div class="card">
+            <div id="centrado">
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
 
                 <!---Buscador-->
@@ -55,7 +54,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
                     </div>
                 </div>
 
-                <?php
+                <?php //esto se hace cuando se busca un libro, ya que se usa php y no ajax
                 if (!isset($_REQUEST['nombreLibro'])) {
 
 
