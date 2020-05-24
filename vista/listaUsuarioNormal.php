@@ -80,7 +80,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
                     ?>
                         <div class="col centrado">
                             <div class="card" style="width: 13rem;">
-                             <!--   <img src="../imagenes/%<?=$codigoLibro ?>%.jpg" class="card-img-top"> --->
+                                <!--   <img src="../imagenes/%<?= $codigoLibro ?>%.jpg" class="card-img-top"> --->
                                 <div class="card-body">
                                     <p class="card-text"><?= $value->getNombre() ?></p>
                                     <p class="card-text"><?= $value->getAutor() ?></p>
@@ -93,8 +93,9 @@ ini_set('display_errors', 'on'); //   salgan errores.
                     }
 
                     ?>
-                    <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
-
+                    <div class="col centrado">
+                        <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
+                    </div>
                 <?php
                 }
 

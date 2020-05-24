@@ -231,8 +231,20 @@ class Libro
             return $salida;
         }
     }
-   
+    public static function getNombrebyCodigo($id)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT nombre FROM libros where codigo  LIKE '$id'");
+            $salida = [];
+            while ($libro = $consulta->fetchObject()) {
+
+                $salida[] = new Libro($libro->nombre);
+            }
+            return $salida;
+        }
+    }
 
 
 }
-?>

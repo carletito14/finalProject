@@ -229,6 +229,20 @@ class Persona
             return $salida;
         }
     }
+    public static function getApellidosById($id)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT apellidos FROM personas where codigo  LIKE '$id'");
+            $salida = [];
+            while ($persona = $consulta->fetchObject()) {
+
+                $salida[] = new Persona($persona->apellidos);
+            }
+            return $salida;
+        }
+    }
     public function getLibrosComprados()
     {
         include_once "../modelo/Libros.php";
