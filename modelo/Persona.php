@@ -5,7 +5,7 @@ class Persona
 {
     private $codigo, $nombre, $apellidos, $pass, $administrador;
 
-    public function __construct($codigo, $nombre = "", $apellidos = "", $pass = "",$administrador = false) //se sobrecarga el método(opcional)
+    public function __construct($codigo, $nombre = "", $apellidos = "", $pass = "", $administrador = false) //se sobrecarga el método(opcional)
     {
         $this->codigo = $codigo;
         $this->nombre = $nombre;
@@ -136,8 +136,8 @@ class Persona
     {
         $conexion = ConexionDB::conectar(); //conectamos
         //consulta
-        $insertar = "UPDATE personas SET nombre='" . $this->getNombre() . "', apellidos = '" . $this->getApellidos() . "',
-         pass = '" . $this->getPass() . "' WHERE codigo=" . $this->getCodigo();
+        $insertar = "UPDATE personas SET nombre='" . $this->getNombre() . "', apellidos = '" . $this->getApellidos() . "', pass = '" . $this->getPass() . "' WHERE codigo=" . $this->getCodigo();
+
         $conexion->exec($insertar); //ejecutamos
     }
 
@@ -214,7 +214,7 @@ class Persona
             return false;
         }
     }
-    
+
     public static function getIdByNombre($nombre)
     {
         $conexion = ConexionDB::conectar(); //conectamos
@@ -243,6 +243,8 @@ class Persona
             return $salida;
         }
     }
+
+    /*
     public function getLibrosComprados()
     {
         include_once "../modelo/Libros.php";
@@ -257,6 +259,17 @@ class Persona
                 $salida[] = new LibrosComprados($alumno->idCliente, $alumno->idLibro);
             }
             return $salida;
-    }
+    }*/
 
+    public function borrarPersona()
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+        if (!is_null($conexion)) {
+            $borrar = ("DELETE FROM personas WHERE codigo=" . $this->getCodigo());
+            $conexion->exec($borrar);
+            /*
+            $borrar = ("DELETE FROM alumno_asignatura WHERE matricula=" . $this->getMatricula());
+            $conexion->exec($borrar);*/
+        }
+    }
 }

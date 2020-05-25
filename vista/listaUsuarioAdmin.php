@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL); //           Esto para que 
 ini_set('display_errors', 'on'); //   salgan errores.
-//include_once "../controlador/listaUsuarioNormal.php";
+include_once "../controlador/listaUsuarioAdmin.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,7 +24,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
         <div class="cabeceraTotal">
             <nav class="nav" id="cabecera">
                 <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
-                <a class="nav-link" href="">Usuarios</a>
+                <a class="nav-link" href="../controlador/listaUsuarios.php">Usuarios</a>
                 <a class="nav-link" href="../controlador/cerrarSesion.php">Cerrar Sesión</a>
 
             </nav>

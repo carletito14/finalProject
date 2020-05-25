@@ -89,7 +89,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
 
                     ?>
                     <div class="col centrado">
-                        <a href="../vista/listaUsuarioNormal.php"> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
+                        <a href=".."> <button type="submit" class="btn btn-link">Ir a inicio</button></a>
                     </div>
                 <?php
                 }
