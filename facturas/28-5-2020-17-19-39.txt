@@ -1,9 +1,9 @@
 FACTURA:
-Fecha: 25-5-2020-14-12-20
+Fecha: 28-5-2020-17-19-39
 ---------------------------------------------------------------------------
 IdCliente:	 Nombre 	 Email 		 idLibro 	 Nombre libro 
 ---------------------------------------------------------------------------
-5		 manuel	 manuel@gmail.com		 23 		EL ABRAZO MAGICO 
+28		 prueba	 pruebecita@gmail.com		 4 		TODA UNA VIDA PARA RECORDAR
 --------------------------------------------------------------------
                                                 TOTAL IMPORTE: 11,85 euros
                                                ---------------------------

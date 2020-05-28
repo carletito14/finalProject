@@ -54,7 +54,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
                                 echo "NO";
                             }  ?></td>
                         <td>
-                            <a href="../controlador/verAsignaturaAlumno.php?codigo=<?= $value->getCodigo() ?>&nombre=<?= $value->getNombre() ?>&apellidos=<?= $value->getApellidos() ?>">
+                            <a href="../controlador/verLibrosUsuario.php?codigo=<?= $value->getCodigo() ?>&nombre=<?= $value->getNombre() ?>&apellidos=<?= $value->getApellidos() ?>">
                                 <!--Paso el codigo y nombre por esta variable-->
                                 <button type="button" class="btn btn-light">Ver libros</button></a>
 

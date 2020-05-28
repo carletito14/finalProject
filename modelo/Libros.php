@@ -136,8 +136,8 @@ class Libro
     {
         $conexion = ConexionDB::conectar(); //conectamos
         //consulta
-        $insertar = "UPDATE libros SET nombre='" . $this->getNombre() . "', autor = '" . $this->getAutor() . "',
-         descipcion = '" . $this->getDescripcion() . "' WHERE codigo=" . $this->getCodigo();
+        $insertar = "UPDATE libros SET nombre='" . $this->getNombre() . "', autor = '" . $this->getAutor() . "', descripcion = '" . $this->getDescripcion() . "' WHERE codigo=" . $this->getCodigo();
+
         $conexion->exec($insertar); //ejecutamos
     }
 
@@ -214,6 +214,17 @@ class Libro
                 $salida[] = new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
             }
             return $salida;
+        }
+    }
+    public static function getLibroByCodigo2($codigo)// parecida a la de arriba pero la uso para editar libro ya que me daba problemas con array
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT * FROM libros WHERE codigo like '$codigo'");
+            $libro = $consulta->fetchObject();
+
+            return new Libro($libro->codigo, $libro->nombre, $libro->autor, $libro->descripcion);
         }
     }
     public static function getIdPersonaByNombre($nombre)

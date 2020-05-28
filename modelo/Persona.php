@@ -244,22 +244,21 @@ class Persona
         }
     }
 
-    /*
-    public function getLibrosComprados()
+    public function getLibros()
     {
         include_once "../modelo/Libros.php";
         $conexion = ConexionDB::conectar(); //conectamos
             //consulta
-            $consulta = "SELECT * from personas WHERE codigo in (SELECT idCliente FROM librosComprados WHERE idLibro = ".$this->getIdLibro().")";
-            $alumnos=$conexion->query($consulta); //ejecutamos
+            $consulta = "SELECT * from libros WHERE codigo in (SELECT idLibro FROM librosComprados WHERE idCliente = ".$this->getCodigo().")";
+            $personas=$conexion->query($consulta); //ejecutamos
             $salida=[];
             
-            while ($alumno = $alumnos->fetchObject()) {
+            while ($persona = $personas->fetchObject()) {
 
-                $salida[] = new LibrosComprados($alumno->idCliente, $alumno->idLibro);
+                $salida[] = new Libro($persona->codigo, $persona->nombre);
             }
             return $salida;
-    }*/
+    }
 
     public function borrarPersona()
     {
@@ -267,9 +266,9 @@ class Persona
         if (!is_null($conexion)) {
             $borrar = ("DELETE FROM personas WHERE codigo=" . $this->getCodigo());
             $conexion->exec($borrar);
-            /*
-            $borrar = ("DELETE FROM alumno_asignatura WHERE matricula=" . $this->getMatricula());
-            $conexion->exec($borrar);*/
+            
+            $borrar = ("DELETE FROM librosComprados WHERE idCliente=" . $this->getCodigo());
+            $conexion->exec($borrar);
         }
     }
 }

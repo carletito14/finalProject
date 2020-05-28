@@ -63,7 +63,7 @@ include_once "../controlador/misDatos.php";
             </div>
             <label for="exampleFormControlInput1">Password</label>
             <div class="col-6 offset-3">
-                <input type="password" class="form-control" id="exampleFormControlInput1" required placeholder="*****" name="pass">
+                <input type="password" class="form-control" id="exampleFormControlInput1" required value="<?= $persona->getPass(); ?>name="pass">
             </div>
 
         </div>

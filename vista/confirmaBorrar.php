@@ -16,7 +16,7 @@
 
     <div class="text-center">
 
-        <h1><span class="badge badge-secondary">¿Estás seguro que deseas borrar el Alumno seleccionado?</span></h1>
+        <h1><span class="badge badge-secondary">¿Estás seguro que deseas borrar el usuario seleccionado?</span></h1>
 
         <a href="../controlador/borrarPersona.php?codigo=<?= $_REQUEST['codigo'] ?>&confirmarBorrar=s"><button type="button" class="btn btn-primary btn-lg">Sí</button></a>
         <a href=".."><button type="button" class="btn btn-secondary btn-lg">No</button></a>

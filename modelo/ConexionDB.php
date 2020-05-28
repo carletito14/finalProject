@@ -16,4 +16,17 @@ abstract class ConexionDB
         }
         return $conexion;
     }
+
+    public static function devolverLibro($idLibro, $idCliente)
+    {
+
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        $consulta = "DELETE FROM librosComprados WHERE idLibro=$idLibro and idCliente=$idCliente";
+        $conexion->exec($consulta);
+        echo '<script type="text/javascript">
+    alert("Libro devuelto con éxito.");
+    window.location.href="..";
+    </script>';
+    }
 }
