@@ -12,7 +12,9 @@ if (isset($_SESSION['nombre'])) {
     foreach ($cliente as $value) {
         $idUsuario = $value->getCodigo();
     }
-    include_once "../vista/misLibros.php"; //mandamos a vista las variables nombre y
+    
+    include_once "../vista/misLibros.php"; //mandamos a vista las variables nombre y id
+
 }else {
     echo '<script type="text/javascript">
     alert(" Debe iniciar sesión para acceder al contenido de esta página.");
