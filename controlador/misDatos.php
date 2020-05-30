@@ -6,6 +6,8 @@ session_start();
 include_once "../modelo/Persona.php";
 $persona = Persona::getPersonaByNombre($_SESSION['nombre']);
 
+if (isset($_SESSION['nombre'])) {
+
 if (isset($_REQUEST['modificaPersona'])) {
     $persona = Persona::getPersonaById($_REQUEST['codigo']);
 
@@ -38,4 +40,10 @@ if (isset($_REQUEST['modificaPersona'])) {
     }
 } else {
     include_once "../vista/misDatos.php";
+}   
+}else {
+    echo '<script type="text/javascript">
+    alert("No puedes acceder sin sesión.");
+    window.location.href="..";
+    </script>';
 }
