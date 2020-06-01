@@ -27,6 +27,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
                     <th scope="col">EMAIL</th>
                     <th scope="col">ADMINISTRADOR</th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +58,21 @@ ini_set('display_errors', 'on'); //   salgan errores.
                             <a href="../controlador/verLibrosUsuario.php?codigo=<?= $value->getCodigo() ?>&nombre=<?= $value->getNombre() ?>&apellidos=<?= $value->getApellidos() ?>">
                                 <!--Paso el codigo y nombre por esta variable-->
                                 <button type="button" class="btn btn-light">Ver libros</button></a>
+
+                        </td>
+                        <td>
+                            <?php
+                    if ($value->getAdministrador() == "0") {
+                        
+                    
+                            ?>
+                            <a href="../controlador/hacerAdmin.php?codigo=<?= $value->getCodigo()?>&nombre=<?= $value->getNombre() ?>&apellidos=<?= $value->getApellidos() ?>">
+                                <!--Paso el codigo y nombre por esta variable-->
+                                <button type="button" class="btn btn-light">Hacer Admin</button></a>
+                        <?php
+                    }
+                        ?>
+
 
                         </td>
 

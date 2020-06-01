@@ -201,6 +201,7 @@ class Persona
             return new Persona($persona->codigo, $persona->nombre, $persona->apellidos, $persona->pass);
         }
     }
+
     public static function esAdministrador($nombre)
     {
         $conexion = ConexionDB::conectar(); //conectamos
@@ -214,6 +215,22 @@ class Persona
             return false;
         }
     }
+    public static function saberAdministrador($id)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT * FROM personas WHERE codigo like '$id' and administrador=0");
+            if ($consulta->rowCount() == 0) {
+                return true;
+            }else {
+                return false;
+            }
+
+            
+        }
+    }
+
 
     public static function getIdByNombre($nombre)
     {
@@ -225,6 +242,20 @@ class Persona
             while ($persona = $consulta->fetchObject()) {
 
                 $salida[] = new Persona($persona->codigo);
+            }
+            return $salida;
+        }
+    }
+    public static function getNombreById($codigo)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+
+        if (!is_null($conexion)) {
+            $consulta = $conexion->query("SELECT nombre FROM personas where nombre  LIKE '$codigo'");
+            $salida = [];
+            while ($persona = $consulta->fetchObject()) {
+
+                $salida[] = new Persona($persona->nombre);
             }
             return $salida;
         }
@@ -248,16 +279,16 @@ class Persona
     {
         include_once "../modelo/Libros.php";
         $conexion = ConexionDB::conectar(); //conectamos
-            //consulta
-            $consulta = "SELECT * from libros WHERE codigo in (SELECT idLibro FROM librosComprados WHERE idCliente = ".$this->getCodigo().")";
-            $personas=$conexion->query($consulta); //ejecutamos
-            $salida=[];
-            
-            while ($persona = $personas->fetchObject()) {
+        //consulta
+        $consulta = "SELECT * from libros WHERE codigo in (SELECT idLibro FROM librosComprados WHERE idCliente = " . $this->getCodigo() . ")";
+        $personas = $conexion->query($consulta); //ejecutamos
+        $salida = [];
 
-                $salida[] = new Libro($persona->codigo, $persona->nombre);
-            }
-            return $salida;
+        while ($persona = $personas->fetchObject()) {
+
+            $salida[] = new Libro($persona->codigo, $persona->nombre);
+        }
+        return $salida;
     }
 
     public function borrarPersona()
@@ -266,9 +297,18 @@ class Persona
         if (!is_null($conexion)) {
             $borrar = ("DELETE FROM personas WHERE codigo=" . $this->getCodigo());
             $conexion->exec($borrar);
-            
+
             $borrar = ("DELETE FROM librosComprados WHERE idCliente=" . $this->getCodigo());
             $conexion->exec($borrar);
         }
     }
+    public static function hacerAdministrador($id)
+    {
+        $conexion = ConexionDB::conectar(); //conectamos
+        if (!is_null($conexion)) {
+            $actualizar = ("UPDATE personas SET administrador=1 WHERE codigo  LIKE '$id'");
+            $conexion->exec($actualizar);
+        }
+    }
+ 
 }

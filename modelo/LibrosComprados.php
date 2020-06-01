@@ -54,7 +54,7 @@ class LibrosComprados
 
     
     //función para comprar un libro
-    public function compraLibro()
+    public function alquilaLibro()
     {
         $conexion = ConexionDB::conectar(); //conectamos
 

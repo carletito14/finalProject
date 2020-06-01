@@ -72,7 +72,7 @@ $codigoLibro = $_REQUEST['codigo'];
             ?>
                 <div class="col text-center">
                     <div class="col bg-white text-center text-white">
-                        <button type="button" onclick="myFunction()" class="btn btn-primary disabled">¡Compra ahora!</button>
+                        <button type="button" onclick="myFunction()" class="btn btn-primary disabled">¡Alquila ahora!</button>
                     </div>
 
                 <?php
@@ -91,8 +91,12 @@ $codigoLibro = $_REQUEST['codigo'];
 
                         <div class="col text-center">
                             <div class="col bg-white text-center text-white">
+                                <a href="../controlador/alquilaLibro.php?codigo=<?= $codigoLibro ?>"><button type="button" class="btn btn-primary btn-lg">¡Alquila ahora!</button></a>
+                            </div><br>
+                            <div class="col bg-white text-center text-white">
                                 <a href="../controlador/compraLibro.php?codigo=<?= $codigoLibro ?>"><button type="button" class="btn btn-primary btn-lg">¡Compra ahora!</button></a>
-                            </div>
+                            </div><br>
+                           
 
                         <?php
                     }

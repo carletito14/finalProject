@@ -14,23 +14,12 @@ if (isset($_REQUEST['nombre'])) {
 
         if ($_REQUEST['pass'] == $_REQUEST['pass1']) {
 
-            if (isset($_REQUEST['administradorSI'])) {
-
-                $persona = new Persona("", $_REQUEST['nombre'], $_REQUEST['apellidos'], $_REQUEST['pass'], 1);
-                $persona->insert();
-                echo '<script type="text/javascript">
-        alert("Usuario administrador guardado.");
-        window.location.href="..";
-        </script>';
-            } else {
-
-                $persona = new Persona("", $_REQUEST['nombre'], $_REQUEST['apellidos'], $_REQUEST['pass'], 0);
-                $persona->insert();
-                echo '<script type="text/javascript">
+            $persona = new Persona("", $_REQUEST['nombre'], $_REQUEST['apellidos'], $_REQUEST['pass'], 0);
+            $persona->insert();
+            echo '<script type="text/javascript">
         alert("Usuario normal guardado.");
         window.location.href="..";
         </script>';
-            }
         } else {
             echo '<script type="text/javascript">
         alert("Las contraseñas deben coincidir.");

@@ -56,11 +56,6 @@ ini_set('display_errors', 'on'); //   salgan errores.
                 <input type="password" class="form-control" id="pass1" placeholder="**********" required name="pass1">
             </div>
 
-            <label for="exampleFormControlInput1">Administrador</label>
-            <div class="col-6 offset-3">
-
-                <label><input type="checkbox" name="administradorSI"> </label><br>
-
 
             </div>
             <button type="submit" value="Verificar" name="botonRegistrar" class="btn btn-outline-primary" href="registraUsuario.php">Registrar</button>
