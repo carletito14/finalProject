@@ -22,11 +22,34 @@ include_once "../controlador/listaUsuarioAdmin.php";
     <div class="container">
         <!---Cabecera-->
         <div class="cabeceraTotal">
-            <nav class="nav" id="cabecera">
-                <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
-                <a class="nav-link" href="../controlador/listaUsuarios.php">Usuarios</a>
-                <a class="nav-link" href="../controlador/cerrarSesion.php">Cerrar Sesión</a>
+            
 
+            <nav class="navbar navbar-expand-lg navbar-light" id="cabecera">
+                <a class="navbar-brand">
+                    <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
+
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" href="../controlador/listaUsuarios.php">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../controlador/cerrarSesion.php">Cerrar Sesión</a>
+                        </li>
+
+                        <li class="nav-item">
+                            
+                        <a href="../controlador/aniadeLibro.php?totalLibros=<?=$librosTotales?>"><button type="button" class="btn btn-info">Añadir Libro</button></a>                        
+
+                        
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
 
@@ -37,15 +60,7 @@ include_once "../controlador/listaUsuarioAdmin.php";
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
                 
 
-                <!---añade-->
-                <div class="col">
-                    <div class="col-md-9 offset-md-9">
-
-                        <a href="../controlador/aniadeLibro.php?totalLibros=<?=$librosTotales?>"><button type="button" class="btn btn-info">Añadir Libro</button></a>                        
-                        <!---añade-->
-
-                    </div>
-                </div>
+            
 
                 <?php //esto se hace cuando se busca un libro, ya que se usa php y no ajax
                 if (!isset($_REQUEST['nombreLibro'])) {

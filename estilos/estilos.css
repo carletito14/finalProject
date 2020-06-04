@@ -7,15 +7,75 @@
     width: 90%;
     height: 115px;
     margin: auto;
-    /*background-color: blue;
-    border: red 5px double;*/
+    background-color: #5096C3;
+    border-radius: 47px 47px 47px 47px;
+    -moz-border-radius: 47px 47px 47px 47px;
+    -webkit-border-radius: 47px 47px 47px 47px;
+    border: 0px solid #000000;
+    display: flex;
+    flex-grow: 4;
+    justify-content: space-around;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    letter-spacing: 1.8px;
+    word-spacing: 0.2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+.nav-link{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    word-spacing: -0.6px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: rgb(68, 68, 68);
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: none;
+}
+
+#compraLibro {
+    margin-top: 6%;
+    width: 60%;
+    -webkit-box-shadow: 0px 0px 300px -19px rgba(80, 151, 195, 0.59);
+    -moz-box-shadow: 0px 0px 300px -19px rgba(80, 151, 195, 0.59);
+    box-shadow: 0px 0px 300px -19px rgba(80, 151, 195, 0.59);
+
+
+    border-radius: 25px 25px 25px 25px;
+    -moz-border-radius: 25px 25px 25px 25px;
+    -webkit-border-radius: 25px 25px 25px 25px;
+    border: 0px solid #000000;
+}
+
+#formulariosVarios {
+    margin-top: 6%;
+    width: 80%;
+    -webkit-box-shadow: 0px 0px 300px -19px rgba(80, 151, 195, 0.59);
+    -moz-box-shadow: 0px 0px 300px -19px rgba(80, 151, 195, 0.59);
+    box-shadow: 0px 0px 300px -19px rgba(80, 151, 195, 0.59);
+
+
+    border-radius: 25px 25px 25px 25px;
+    -moz-border-radius: 25px 25px 25px 25px;
+    -webkit-border-radius: 25px 25px 25px 25px;
+    border: 0px solid #000000;
+}
+
+#titulo {
+    margin-top: 100px;
 }
 
 #cabecera {
     margin: auto;
-    display: flex;
-    flex-grow: 4;
-    justify-content: space-between;
 
 }
 
@@ -28,15 +88,23 @@
 .cuerpo {
     width: 90%;
     margin: auto;
-   /* background-color: red;*/
+    /* background-color: red;*/
     margin-top: 20px;
+}
+
+#libros {
+    margin-top: 8%;
 }
 
 .footer {
     margin: auto;
     margin-top: 20px;
-    /*background-color: red;*/
     width: 100%;
+    background-color: #5096C3;
+    border-radius: 47px 47px 47px 47px;
+    -moz-border-radius: 47px 47px 47px 47px;
+    -webkit-border-radius: 47px 47px 47px 47px;
+    border: 0px solid #000000;
 }
 
 #mapa {
@@ -48,14 +116,11 @@
 .centrado {
     display: flex;
     justify-content: center;
-    
+
 }
 
 
 .pagHijo button {
-   margin: auto;
-    
+    margin: auto;
+
 }
-
-
-

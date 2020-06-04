@@ -23,10 +23,33 @@ ini_set('display_errors', 'on'); //   salgan errores.
     <div class="container">
         <!---Cabecera-->
         <div class="cabeceraTotal">
-            <nav class="nav" id="cabecera">
-                <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
-                <a class="nav-link" href="../controlador/quienesSomos.php">Quiénes Somos</a>
-                <a class="nav-link" href="../controlador/login.php">Login/Sign Up</a>
+            
+            <nav class="navbar navbar-expand-lg navbar-light" id="cabecera">
+                <a class="navbar-brand">
+                    <a><img src="../imagenes/Biblioteca.png" id="imgCabecera"></a>
+
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                        <a class="nav-link" href="../controlador/quienesSomos.php">Quiénes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../controlador/login.php">Login/Sign Up</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <form action="../controlador/buscaLibro.php" method="post" class="form-inline">
+                                <input class="form-control mr-sm-9" type="search" placeholder="Título del libro" aria-label="Search" name="nombreLibro">
+                                <button class="btn btn-primary my-2 my-sm-9" name="buscar" type="submit">Buscar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
 
@@ -141,8 +164,8 @@ ini_set('display_errors', 'on'); //   salgan errores.
                         <div class="col-md-3 mb-md-0 mb-3">
 
                             <!-- Links -->
-                            <h5 class="text-uppercase" id="mapa">Ubicación</h5>
-
+                                <h5 class="text-uppercase" id="mapa">Ubicación</h5>
+                            
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.7590375872555!2d-5.776169221618539!3d37.185901454436305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd127fa80bd7d143%3A0x9fa974b82c133ef6!2sInstituto%20de%20Educaci%C3%B3n%20Secundaria%20Ruiz%20Gij%C3%B3n!5e0!3m2!1ses!2ses!4v1588608719172!5m2!1ses!2ses"></iframe>
 
 

@@ -1,14 +1,14 @@
 FACTURA:
-Fecha: 1-6-2020-18-55-09
+Fecha: 4-6-2020-9-57-03
 ---------------------------------------------------------------------------
 IdCliente:	 Nombre 	 Apellido  		 Dirección Usuario 	 Código postal 	       Nombre Libro
 ------------------------------------------------------------------------------------------------------------
-31		 Manuel		 Gutiérrez Campos		 machado 62 		41720		TODA UNA VIDA PARA RECORDAR
+32		 Manuel		 Gutiérrez Campos		 Antonio machado 		41720		LAS BRUJAS
 -----------------------------------------------------------------------------------------------------
                                                 TOTAL IMPORTE: 11,85 euros
                                                ---------------------------
                                                 Método de entrega seleccionado:
-                                               ------Llevar a casa-------
+                                               ------Recogida de libro en Biblioteca-------
                                                           IVA: 0%
                                                ---------------------------
                                                           TOTAL: 11,85 euros

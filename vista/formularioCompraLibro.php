@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 
@@ -14,44 +13,44 @@
 </head>
 
 <body>
-    <div class="container">
-    <form>
-    <div class="form-group">
-            <label for="exampleInputEmail1">Id usuario</label>
-            <h5><strong><?php echo $idUsuario; ?></strong></h5>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Nombre del usuario</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Introduzca su nombre" name="nombreComprador">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Apellido del usuario</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Introduzca sus apellidos" name="apellidoComprador">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Correo electrónico</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" value="<?= $correo?>">
-            <small id="emailHelp" class="form-text text-muted">No compartiremos tu correo electrónico con nadie más.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Dirección de Facturación</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="direccionUsuario" placeholder="Introduce tu dirección">
-            <input type="number" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="cpUsuario" placeholder="Código Postal">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Nombre del libro</label>
-            <h5><strong><?php echo $nombreLibro; ?></strong></h5>
-            <input type="hidden" name="nombreLibro" value="<?php echo $nombreLibro; ?>">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Precio: 11.95€ </label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="check">
-            <label class="form-check-label" for="exampleCheck1">Clica aquí si desea recoger el libro en tienda.</label>
-        </div>
-       <a href="../controlador/compraLibro.php" name="confirmaComprar"><button type="submit" name="confirmaComprar" class="btn btn-primary">Comprar</button></a>
-    </form>
+    <div class="container" id="compraLibro">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Id usuario</label>
+                <h5><strong><?php echo $idUsuario; ?></strong></h5>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre del usuario</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Introduzca su nombre" name="nombreComprador">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Apellido del usuario</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Introduzca sus apellidos" name="apellidoComprador">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Correo electrónico</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" value="<?= $correo ?>">
+                <small id="emailHelp" class="form-text text-muted">No compartiremos tu correo electrónico con nadie más.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Dirección de Facturación</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="direccionUsuario" placeholder="Introduce tu dirección">
+                <input type="number" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="cpUsuario" placeholder="Código Postal">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre del libro</label>
+                <h5><strong><?php echo $nombreLibro; ?></strong></h5>
+                <input type="hidden" name="nombreLibro" value="<?php echo $nombreLibro; ?>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Precio: 11.95€ </label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="check">
+                <label class="form-check-label" for="exampleCheck1">Clica aquí si desea recoger el libro en tienda.</label>
+            </div>
+            <a href="../controlador/compraLibro.php" name="confirmaComprar"><button type="submit" name="confirmaComprar" class="btn btn-primary">Comprar</button></a><br>
+        </form>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

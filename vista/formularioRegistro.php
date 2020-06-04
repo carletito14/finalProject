@@ -11,55 +11,51 @@ ini_set('display_errors', 'on'); //   salgan errores.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="../funciones/funcionesAnonimo.js" language="Javascript"></script>
-
+    <link rel="stylesheet" href="../estilos/estilos.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-
-                    <a class="nav-link"><strong>
-                            <h3>Registro</h3>
-                        </strong>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-    </nav>
+<div class="container" id="formulariosVarios">
+        <p class="text-center">
+            <a href=".."><button type="button" class="btn btn-primary">
+                    Sign Up
+                </button></a>
+        </p>
 
     <form class="justify-content-center text-center" action="#.php">
         <div class="form-group justify-content-center">
+        <div class="form-group mx-3">
             <label for="exampleFormControlInput1">Usuario</label>
             <div class="col-6 offset-3">
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el nombre del usuario" required name="nombre">
             </div>
+        </div>
+        <div class="form-group mx-3">
             <label for="exampleFormControlInput1">Correo Electrónico</label>
             <div class="col-6 offset-3">
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el correo electrónico" required name="apellidos">
             </div>
+        </div>
 
+        <div class="form-group mx-3">
             <label for="exampleFormControlInput1">Contraseña</label>
             <div class="col-6 offset-3">
                 <input type="password" class="form-control" id="pass" placeholder="**********" required name="pass">
             </div>
+
+        </div>
+        <div class="form-group mx-3">
             <label for="exampleFormControlInput1">Repite la contraseña</label>
             <div class="col-6 offset-3">
                 <input type="password" class="form-control" id="pass1" placeholder="**********" required name="pass1">
             </div>
-
+        </div>
 
             </div>
             <button type="submit" value="Verificar" name="botonRegistrar" class="btn btn-outline-primary" href="registraUsuario.php">Registrar</button>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand  bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button><br><br>
@@ -74,6 +70,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
                 </div>
             </nav>
     </form>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
