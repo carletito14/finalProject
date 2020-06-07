@@ -64,7 +64,10 @@ ini_set('display_errors', 'on'); //   salgan errores.
                     <textarea class="form-control" disabled="true" id="exampleFormControlTextarea1" rows="2">Para insertar la foto del libro, renómbrala como: '<?php echo $librosTotales + 1 ?>.jpg', después, vuelca la foto dentro de la carpeta 'imagenes'.</textarea>
                 </div>
             </div>
-            <a href="../controlador/registraLibro.php"><button type="submit" value="Verificar" name="botonRegistrarLibro" class="btn btn-outline-primary">Añade Libro</button></a>
+            <div style="margin-bottom: 50px;">
+
+                <a href="../controlador/registraLibro.php"><button type="submit" value="Verificar" name="botonRegistrarLibro" class="btn btn-outline-primary">Añade Libro</button></a>
+            </div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

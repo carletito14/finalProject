@@ -16,7 +16,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="formulariosVarios">
         <table class="table table-hover">
             <thead class="thead-dark">
                 <tr>
@@ -62,16 +62,16 @@ ini_set('display_errors', 'on'); //   salgan errores.
                         </td>
                         <td>
                             <?php
-                    if ($value->getAdministrador() == "0") {
-                        
-                    
+                            if ($value->getAdministrador() == "0") {
+
+
                             ?>
-                            <a href="../controlador/hacerAdmin.php?codigo=<?= $value->getCodigo()?>&nombre=<?= $value->getNombre() ?>&apellidos=<?= $value->getApellidos() ?>">
-                                <!--Paso el codigo y nombre por esta variable-->
-                                <button type="button" class="btn btn-light">Hacer Admin</button></a>
-                        <?php
-                    }
-                        ?>
+                                <a href="../controlador/hacerAdmin.php?codigo=<?= $value->getCodigo() ?>&nombre=<?= $value->getNombre() ?>&apellidos=<?= $value->getApellidos() ?>">
+                                    <!--Paso el codigo y nombre por esta variable-->
+                                    <button type="button" class="btn btn-light">Hacer Admin</button></a>
+                            <?php
+                            }
+                            ?>
 
 
                         </td>
@@ -85,9 +85,11 @@ ini_set('display_errors', 'on'); //   salgan errores.
 
             </tbody>
         </table>
-        <div class="col centrado">
+
+        <div class="col centrado" style="margin-bottom: 50px;">
             <a href=".."> <button type="submit" class="btn btn-info">Ir a inicio</button></a>
         </div>
+
     </div>
 
     <!-- Optional JavaScript -->

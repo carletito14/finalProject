@@ -17,44 +17,46 @@ ini_set('display_errors', 'on'); //   salgan errores.
 </head>
 
 <body>
-<div class="container" id="formulariosVarios">
+    <div class="container" id="formulariosVarios">
         <p class="text-center">
             <a href=".."><button type="button" class="btn btn-primary">
                     Sign Up
                 </button></a>
         </p>
 
-    <form class="justify-content-center text-center" action="#.php">
-        <div class="form-group justify-content-center">
-        <div class="form-group mx-3">
-            <label for="exampleFormControlInput1">Usuario</label>
-            <div class="col-6 offset-3">
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el nombre del usuario" required name="nombre">
-            </div>
-        </div>
-        <div class="form-group mx-3">
-            <label for="exampleFormControlInput1">Correo Electrónico</label>
-            <div class="col-6 offset-3">
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el correo electrónico" required name="apellidos">
-            </div>
-        </div>
+        <form class="justify-content-center text-center" action="#.php">
+            <div class="form-group justify-content-center">
+                <div class="form-group mx-3">
+                    <label for="exampleFormControlInput1">Usuario</label>
+                    <div class="col-6 offset-3">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el nombre del usuario" required name="nombre">
+                    </div>
+                </div>
+                <div class="form-group mx-3">
+                    <label for="exampleFormControlInput1">Correo Electrónico</label>
+                    <div class="col-6 offset-3">
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Introduce aquí el correo electrónico" required name="apellidos">
+                    </div>
+                </div>
 
-        <div class="form-group mx-3">
-            <label for="exampleFormControlInput1">Contraseña</label>
-            <div class="col-6 offset-3">
-                <input type="password" class="form-control" id="pass" placeholder="**********" required name="pass">
-            </div>
+                <div class="form-group mx-3">
+                    <label for="exampleFormControlInput1">Contraseña</label>
+                    <div class="col-6 offset-3">
+                        <input type="password" class="form-control" id="pass" placeholder="**********" required name="pass">
+                    </div>
 
-        </div>
-        <div class="form-group mx-3">
-            <label for="exampleFormControlInput1">Repite la contraseña</label>
-            <div class="col-6 offset-3">
-                <input type="password" class="form-control" id="pass1" placeholder="**********" required name="pass1">
-            </div>
-        </div>
+                </div>
+                <div class="form-group mx-3">
+                    <label for="exampleFormControlInput1">Repite la contraseña</label>
+                    <div class="col-6 offset-3">
+                        <input type="password" class="form-control" id="pass1" placeholder="**********" required name="pass1">
+                    </div>
+                </div>
 
             </div>
-            <button type="submit" value="Verificar" name="botonRegistrar" class="btn btn-outline-primary" href="registraUsuario.php">Registrar</button>
+            <div style="margin-bottom: 30px;">
+                <button type="submit" value="Verificar" name="botonRegistrar" class="btn btn-outline-primary" href="registraUsuario.php">Registrar</button>
+            </div>
             <nav class="navbar navbar-expand  bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -69,8 +71,8 @@ ini_set('display_errors', 'on'); //   salgan errores.
                     </ul>
                 </div>
             </nav>
-    </form>
-</div>
+        </form>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

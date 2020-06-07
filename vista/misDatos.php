@@ -18,7 +18,7 @@ include_once "../controlador/misDatos.php";
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="formulariosVarios">
         <p class="text-center">
             <button type="button" class="btn btn-outline-primary">
                     Mis datos

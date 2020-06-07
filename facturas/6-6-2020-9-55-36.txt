@@ -1,12 +1,12 @@
 FACTURA:
-Fecha: 1-6-2020-20-40-07
+Fecha: 6-6-2020-9-55-36
 ---------------------------------------------------------------------------
 IdCliente:	 Nombre 	 Email 		 idLibro 	 Nombre libro 
 ---------------------------------------------------------------------------
-32		 pruebita	 pruebecita@gmail.com		 2 		NOCHE Y OCEANO
+33		 antonio	 antonio@gmail.com		 1 		SALVAR EL FUEGO
 --------------------------------------------------------------------
-                                                TOTAL IMPORTE: 11,85 euros
+                                                TOTAL IMPORTE: 1,35 euros/alquiler
                                                ---------------------------
                                                           IVA: 0%
                                                ---------------------------
-                                                          TOTAL: 11,85 euros
+                                                          TOTAL: 1,35 euros

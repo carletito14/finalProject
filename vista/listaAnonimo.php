@@ -59,20 +59,7 @@ ini_set('display_errors', 'on'); //   salgan errores.
             <div id="centrado">
                 <h2 class="text-center" id="titulo">Todos los libros</h2>
 
-                <!---Buscador-->
-                <div class="col">
-                    <div class="col-md-9 offset-md-9">
-
-                        <!---Formulario buscar-->
-                        <form action="../controlador/buscaLibro.php" method="post" class="form-inline">
-                            <input class="form-control mr-sm-1" type="search" placeholder="Título del libro" aria-label="Search" name="nombreLibro">
-                            <button class="btn btn-outline-success my-2 my-sm-3" name="buscar" type="submit">Buscar</button>
-                        </form>
-                        <!---Formulario-->
-
-                    </div>
-                </div>
-
+              
                 <?php //esto se hace cuando se busca un libro, ya que se usa php y no ajax
                 if (!isset($_REQUEST['nombreLibro'])) {
 

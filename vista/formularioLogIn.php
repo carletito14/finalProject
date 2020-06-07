@@ -39,9 +39,10 @@ ini_set('display_errors', 'on'); //   salgan errores.
                     </div>
 
                 </div>
+                <div style="margin-bottom: 30px;">
 
-                <button type="submit" name="botonLoguear" class="btn btn-outline-primary" href="../controlador/compruebaLogIn.php">Entrar</button>
-            
+                    <button type="submit" name="botonLoguear" class="btn btn-outline-primary" href="../controlador/compruebaLogIn.php">Entrar</button>
+                </div>
         </form> <br>
         <nav class="navbar navbar-expand bg-light" id="cabeceraTotal">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

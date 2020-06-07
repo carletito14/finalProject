@@ -31,20 +31,20 @@ $factura .= "-------------------------------------------------------------------
         $factura .= "--------------------------------------------------------------------".PHP_EOL;
     
 
-$factura .="                                                TOTAL IMPORTE: 11,85 euros".PHP_EOL;
+$factura .="                                                TOTAL IMPORTE: 1,35 euros/alquiler".PHP_EOL;
 $factura .= "                                               ---------------------------".PHP_EOL;
 $iva = $total*0.21;
 $factura .="                                                          IVA: 0%".PHP_EOL;
 $factura .= "                                               ---------------------------".PHP_EOL;
 $total;
-$factura .="                                                          TOTAL: 11,85 euros".PHP_EOL;
+$factura .="                                                          TOTAL: 1,35 euros".PHP_EOL;
 
 $fichero = fopen("../facturas/$fecha.txt","w");
 fwrite($fichero, $factura);
 fclose($fichero);
 
 echo '<script type="text/javascript">
-alert("Libro alquilado con éxito con factura generada. Acuda a la biblioteca para poder recogerlo lo antes posible antes del período de 15 días de devolución.");
+alert("Libro alquilado con éxito con factura generada. Acuda a la biblioteca para poder recogerlo lo antes posible antes del período de 15 días de devolución. El dinero se abonará allí por ser alquiler.");
 window.location.href="..";
 </script>';
 ?>
