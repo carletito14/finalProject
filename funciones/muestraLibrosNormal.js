@@ -35,11 +35,15 @@ function cargar() {
 
                     var p = document.createElement('p')
                     p.classList.add('card-text')
-                    p.innerHTML = element.autor;
+                    p.classList.add("anotherclase");
+
+                    p.innerHTML = element.nombre;
 
                     var p2 = document.createElement('p')
                     p2.classList.add('card-text')
-                    p2.innerHTML = element.nombre;
+                    p2.classList.add("anotherclass");
+
+                    p2.innerHTML = element.autor;
 
 
                     var a = document.createElement('a')

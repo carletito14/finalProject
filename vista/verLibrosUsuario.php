@@ -4,8 +4,8 @@ ini_set('display_errors', 'on'); //   salgan errores.
 include_once "../modelo/Libros.php";
 include_once "../modelo/Persona.php";
 
-$usuarioLibros = Persona::getPersonaById($_REQUEST['codigo']); //recoge el código del alumno
-$usuarioLibros = $usuarioLibros->getLibros(); //obtiene todas las asignaturas que está matriculado
+$usuarioLibros = Persona::getPersonaById($_REQUEST['codigo']); //recoge el código del usuario
+$usuarioLibros = $usuarioLibros->getLibros(); //obtiene todas los libros
 
 ?>
 <!doctype html>
@@ -40,15 +40,15 @@ $usuarioLibros = $usuarioLibros->getLibros(); //obtiene todas las asignaturas qu
             ?>
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td><?php echo $value->getNombre() ?></td>
+                    <th></th>
+                    <th></th>
+                    <th><?php echo $value->getNombre() ?></th>
                     <!--Imprimo nombre de asigntura-->
-                    <td>
+                    <th>
                         <a href="../controlador/devolverLibro.php?idLibro=<?= $value->getCodigo() ?>&idCliente=<?= $_REQUEST['codigo'] ?>">
                             <button type="button" class="btn btn-info">Devolver</button></a>
 
-                    </td>
+            </th>
 
                 </tr>
 

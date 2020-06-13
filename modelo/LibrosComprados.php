@@ -3,12 +3,13 @@ include_once "../modelo/ConexionDB.php";
 
 class LibrosComprados
 {
-    private $idCliente, $idLibro;
+    private $idCliente, $idLibro, $fechaDevolucion;
 
-    public function __construct($idCliente="", $idLibro="")
+    public function __construct($idCliente="", $idLibro="", $fechaDevolucion="")
     {
         $this->idCliente = $idCliente;
         $this->idLibro = $idLibro;
+        $this->fechaDevolucion = $fechaDevolucion;
     }
 
 
@@ -52,6 +53,25 @@ class LibrosComprados
         return $this;
     }
 
+    /**
+     * Get the value of fechaDevolucion
+     */ 
+    public function getFechaDevolucion()
+    {
+        return $this->fechaDevolucion;
+    }
+
+    /**
+     * Set the value of fechaDevolucion
+     *
+     * @return  self
+     */ 
+    public function setFechaDevolucion($fechaDevolucion)
+    {
+        $this->fechaDevolucion = $fechaDevolucion;
+
+        return $this;
+    }
     
     //función para comprar un libro
     public function alquilaLibro()
@@ -59,8 +79,8 @@ class LibrosComprados
         $conexion = ConexionDB::conectar(); //conectamos
 
 
-        $insertar = "INSERT into librosComprados(idCliente,idLibro) VALUES
-        ('" . $this->idCliente . "','" . $this->idLibro . "')";
+        $insertar = "INSERT into librosComprados(idCliente,idLibro,fechaDevolucion) VALUES
+        ('" . $this->idCliente . "','" . $this->idLibro . "','" . $this->fechaDevolucion . "')";
 
         $conexion->exec($insertar); //ejecutamos
         
@@ -76,4 +96,6 @@ class LibrosComprados
             return new LibrosComprados($libros->idLibro);
         }
     }
+
+    
 }

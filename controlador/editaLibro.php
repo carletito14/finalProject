@@ -15,7 +15,7 @@ if (isset($_REQUEST['editarLibro'])) {
         $libroParaEditar->update();
 
         echo '<script type="text/javascript">
-        alert("Persona editada correctamente.");
+        alert("Libro editado correctamente.");
         window.location.href="..";
         </script>';
     

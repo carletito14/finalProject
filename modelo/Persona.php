@@ -167,7 +167,7 @@ class Persona
     {
         $conexion = ConexionDB::conectar(); //conectamos
 
-        $consulta = $conexion->query("SELECT * FROM personas WHERE pass like '%$pass%'");
+        $consulta = $conexion->query("SELECT * FROM personas WHERE pass like '$pass'");
 
         return $consulta->rowCount();
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,16 @@ include_once "../modelo/Libros.php";
 
 
 $factura = "";
-$fecha = date("j-n-Y-G-i-s");
-$fechaEmilio = date("j-n-Y-G-i-s");
+$fechaMostrar=date("j-n-Y-G-i-s");
+
+$fecha = date("d-m-Y");
+$fechaDevolucion = date("d-m-Y",strtotime($fecha."+ 15 days"));
 $total = 0;
     
 
 $factura .= "FACTURA:".PHP_EOL;
 $factura .= "Fecha: ".$fecha.PHP_EOL;
+$factura .= "Fecha de devolución: ".$fechaDevolucion.PHP_EOL;
 $factura .= "---------------------------------------------------------------------------".PHP_EOL;
 $factura .= "IdCliente:\t Nombre \t Email \t\t idLibro \t Nombre libro ".PHP_EOL;
 $factura .= "---------------------------------------------------------------------------".PHP_EOL;
@@ -39,7 +42,7 @@ $factura .= "                                               --------------------
 $total;
 $factura .="                                                          TOTAL: 1,35 euros".PHP_EOL;
 
-$fichero = fopen("../facturas/$fecha.txt","w");
+$fichero = fopen("../facturas/$fechaMostrar.txt","w");
 fwrite($fichero, $factura);
 fclose($fichero);
 
