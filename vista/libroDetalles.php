@@ -23,6 +23,7 @@ $codigoLibro = $_REQUEST['codigo'];
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../estilos/estilosLibros.css">
     <script src="../funciones/funcionesAnonimo.js"></script>
 </head>
 
@@ -31,7 +32,7 @@ $codigoLibro = $_REQUEST['codigo'];
     <div class="container">
 
         <div class="row">
-            <div class="col bg-dark text-center text-white">
+            <div class="col mio">
                 <h1><?= $nombre ?></h1>
             </div>
         </div><br><br>
@@ -104,7 +105,7 @@ $codigoLibro = $_REQUEST['codigo'];
                         <br>
                         <br>
                         <br>
-                        <nav class="navbar navbar-light justify-content-center" style="background-color: #e3f2fd;">
+                        <nav class="navbar">
 
                             <a class="nav-link active" href="..">Volver al inicio</a>
 

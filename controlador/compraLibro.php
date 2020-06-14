@@ -23,7 +23,7 @@ if (isset($_REQUEST['confirmaComprar'])) {
     echo $nombreLibro = $_REQUEST['nombreLibro'];
     $estado = "";
     if (isset($_REQUEST['check'])) {
-        $estado = "Recogida de libro en Biblioteca";
+        $estado = "Recogida de libro en establecimiento.";
     }else {
         $estado = "Entregar a domicilio";
     }
